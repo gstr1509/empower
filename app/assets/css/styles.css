@@ -20,6 +20,7 @@ html, body
 /* nav styles */
 nav.cmn-tile-nav {
   display: none;
+  height: 100vh;
 }
 nav.cmn-tile-nav.open {
   display: block;
@@ -170,7 +171,8 @@ nav.cmn-tile-nav a {
 @media all and (min-width: 1024px) {
   nav.cmn-tile-nav li {
     overflow: visible;
-    width: 99.5%;
+    /* width: 99.5%; */
+	width: 350px;
   }
   nav.cmn-tile-nav a {
     padding: 80px 20px 20px 20px;
@@ -215,4 +217,10 @@ a.nav-toggle:hover {
   color: #282828;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 30px;
+}
+.dashMenuTileHt{
+	height:20vh;
+}
+.dashMenuHt{
+	height:100vh;
 }
