@@ -23,13 +23,12 @@
 
   <body ng-app="emp">
 <!--    <div><button onClick="document.location.reload(true)">reload plunker (without changing the url)</button></div>-->
+<div class="jumbotron img-responsive" style="padding:0px;height:100%;margin-bottom:0px;background-image:url(./assets/images/bgdimg.jpg);    background-size: cover;
+    background-repeat: no-repeat;">
 
-    <a ui-sref="hello" ui-sref-active="active">Hello</a>
-    <a ui-sref="participate" ui-sref-active="active">Participate</a>
-    <a ui-sref="people" ui-sref-active="active">People</a>
+  <ui-view></ui-view>
+</div>
 
-
-    <ui-view></ui-view>
 
     <uir-state-vis class="statevis" width="300" height="100"></uir-state-vis>
   </body>

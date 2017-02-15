@@ -20,6 +20,7 @@ gulp.task('scripts', function() {
     gulp.src([
      './app/core/lib/angular.js',
      './app/core/lib/angular-ui-router.js',
+	 './app/core/lib/particles.min.js',
           './app/core/js/app.js',
             './app/components/**/*.js',
             './app/services/**/*.js',
@@ -28,10 +29,17 @@ gulp.task('scripts', function() {
         //.pipe(uglify())
         .pipe(gulp.dest(dest));
 })
+// minify new images
+gulp.task('imagemin', function() {
+    var imgSrc = ['./app/assets/images/**/*'],
+        imgDst = dest + '/assets/images';
+    gulp.src(imgSrc)
+        .pipe(gulp.dest(imgDst));
+});
 // CSS concat, auto-prefix and minify
 gulp.task('css', function() {
-    gulp.src(['./app/**/*.css'])
+    gulp.src(['./app/**/*.css','./app/core/lib/bootstrap337.min.css'])
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(dest + '/assets/css/'));
 });
-gulp.task('default', ['html','json','scripts', 'css'], function() {});
+gulp.task('default', ['html','json','imagemin','scripts', 'css'], function() {});
