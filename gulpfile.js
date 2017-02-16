@@ -18,9 +18,7 @@ gulp.task('json', function() {
 gulp.task('scripts', function() {
     /* gulp.task('scripts', function () { */
     gulp.src([
-     './app/core/lib/angular.js',
-     './app/core/lib/angular-ui-router.js',
-	 './app/core/lib/particles.min.js',
+     './app/core/lib/angular.js','./app/core/lib/angular-ui-router.js','./app/core/lib/particles.min.js','./app/core/lib/angular-smooth-scroll.js',
           './app/core/js/app.js',
             './app/components/**/*.js',
             './app/services/**/*.js',

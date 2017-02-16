@@ -1,4 +1,4 @@
-angular.module('emp', ['ui.router'])
+angular.module('emp', ['ui.router','smoothScroll'])
 
 angular.module('emp').config(function($stateProvider,$urlRouterProvider) {
   // An array of state definitions
@@ -19,6 +19,11 @@ angular.module('emp').config(function($stateProvider,$urlRouterProvider) {
       name: 'dashboard',
       url: '/dashboard',
       component: 'dashboard'
+    },
+	{
+      name: 'landing',
+      url: '/',
+      component: 'landing'
     },
     {
       name: 'people',
@@ -53,11 +58,12 @@ angular.module('emp').config(function($stateProvider,$urlRouterProvider) {
   states.forEach(function(state) {
     $stateProvider.state(state);
   });
-  //$urlRouterProvider.otherwise("/dashboard");
+ //  $location.path('/');
+  $urlRouterProvider.otherwise("/");
 });
 
 // To account for plunker embeds timing out, preload the async data
 angular.module('emp').run(function($http,$location) {
-  //$location.path('/dashboard');
+ 
   $http.get('core/data/people.json', { cache: true });
 });
